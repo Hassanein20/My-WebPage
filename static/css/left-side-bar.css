@@ -1,0 +1,158 @@
+.leftside {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  align-items: center;
+  left: 3vw;
+  top: 1vw;
+  bottom: 1vw;
+  width: 5vw;
+  background-color: rgb(25, 26, 28);
+  justify-content: space-between;
+}
+
+.leftside button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  background-color: transparent;
+  border: 0;
+  color: white;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: scale 0.4s ease-in-out;
+}
+
+#bars {
+  background-color: rgb(82, 186, 130);
+  margin: 0;
+  width: 5vw;
+  height: 50px;
+  scale: 1;
+  color: rgb(255, 255, 255);
+}
+
+.top-bar {
+  display: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#user {
+  color: rgb(82, 186, 130);
+}
+
+#download {
+  color: rgb(82, 186, 130);
+  transition: scale 0.4s ease-in-out;
+}
+
+.leftside button:hover {
+  scale: 1.2;
+}
+
+@media (max-width: 480px) {
+  .leftside {
+    display: none;
+    left: 0vw;
+    top: 0vw;
+    bottom: 0vw;
+    z-index: 1000;
+    width: 40vw;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  #bars {
+    background-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0);
+  }
+  .leftside button div {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    padding-left: 20px;
+    font-weight: bolder;
+    white-space: nowrap;
+  }
+  .leftside button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .top-bar {
+    background-color: rgba(255, 255, 255, 0.205);
+    display: flex;
+    position: fixed;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 99vw;
+    height: 20vw;
+    z-index: 1000;
+    left: 0.5vw;
+    right: 0.5vw;
+    top: 0vw;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .barsbtnsmall {
+    background-color: rgb(82, 186, 130);
+    margin: 0;
+    width: 20vw;
+    height: 20vw;
+    scale: 1;
+    border: 0;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: scale 0.4s ease-in-out;
+    border-bottom-right-radius: 20px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .top-bar img {
+    width: 16vw;
+    height: 16vw;
+    border-radius: 50vw;
+    object-fit: fill;
+    margin-left: 3vw;
+    background-color: rgb(25, 26, 28);
+    margin-right: 1vw;
+  }
+  .namesmall {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: bolder;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-right: 10vw;
+  }
+  button:focus {
+    outline: none;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 480px) {
+  .leftside {
+    left: 1.5vw;
+    width: 7vw;
+  }
+  #bars {
+    left: 1.5vw;
+    width: 7vw;
+  }
+  .leftside button div {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .leftside button div {
+    display: none;
+  }
+}
