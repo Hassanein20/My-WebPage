@@ -2,6 +2,7 @@ var profilebtn = document.getElementById("user");
 var contactbtn = document.getElementById("contact");
 var downloadCVbtn = document.getElementById("download");
 var barssmallbtn = document.getElementById("barssmall");
+const sidebar = document.querySelector(".leftside");
 
 function ShowContent(contentId, button) {
   const contents = document.querySelectorAll(".content");
@@ -19,6 +20,9 @@ function ShowContent(contentId, button) {
   const selectedButton = document.getElementById(button);
 
   if (selectedContent) {
+    if (window.innerWidth <= 480) {
+      sidebar.style.display = "none";
+    }
     selectedContent.style.display = "flex";
   }
 
@@ -37,6 +41,20 @@ downloadCVbtn.addEventListener("click", () => {
   document.body.removeChild(link);
 });
 barssmallbtn.addEventListener("click", () => {
-  const sidebar = document.querySelector(".leftside");
-  sidebar.style.display = "flex";
+  if (sidebar.style.display == "flex") {
+    sidebar.style.display = "none";
+  } else {
+    sidebar.style.display = "flex";
+  }
 });
+
+function CheckWindowWidth() {
+  if (window.innerWidth > 480) {
+    sidebar.style.display = "flex";
+  } else {
+    sidebar.style.display = "none";
+  }
+}
+
+CheckWindowWidth();
+window.addEventListener("resize", CheckWindowWidth);
